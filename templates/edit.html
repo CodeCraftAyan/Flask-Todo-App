@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Edit
+{% endblock %}
+
+{% block content %}
+
+<div class="body">
+    <h1 class="title"> Todo App</h1>
+
+    <div class="form-div">
+        <form action="{{ url_for('views.edit', task_id=task.id) }}" method="POST" class="form">
+            <label for="task">Edit Task</label>
+            <input type="text" name="task" id="task" value="{{ task.task }}">
+            <label>
+                <input type="checkbox" name="status" {% if task.status %}checked{% endif %}>
+                Mark as Completed
+            </label>
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

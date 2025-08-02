@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<div class="body">
+    <h1 class="title">Todo App</h1>
+
+    <div class="form-div">
+        <form action="{{ url_for('views.create') }}" method="POST" class="form">
+            <label for="task">Create Task</label>
+            <input type="text" name="task" id="task">
+            <input type="submit" value="Create">
+        </form>
+    </div>
+    
+    <div class="cards-body">
+        {% if tasks %}
+            {% for task in tasks %}
+                <div class="card">
+                    <div class="data">
+                        <h3><span>#{{ task.id }}</span> {{ task.task }}</h3>
+                        <p class="light-text">{{ task.created_at.strftime('%d, %B %Y') }}</p>
+                    </div>
+                    <div class="btns">
+                        <div>
+                            {% if task.status == True %}
+                                <p class="done">✔️Complete</p>
+                            {% else %}
+                                <p class="undone">❌Pending</p>
+                            {% endif %}
+                        </div>
+                        <a href="{{ url_for('views.edit', task_id=task.id) }}">
+                            <button class="edit">Edit</button>
+                        </a>
+                        <form action="{{ url_for('views.delete', task_id=task.id) }}" method="POST">
+                            <button type="submit" onclick="return confirm('Are you sure?')" class="delete">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No tasks available.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

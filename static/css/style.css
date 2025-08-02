@@ -1,0 +1,174 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+  background: #1f1f1f;
+  color: #f2f2f2;
+}
+
+body > div.body {
+  padding: 50px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  body > div.body {
+    width: 85%;
+  }
+}
+
+@media (max-width: 600px) {
+  body > div.body {
+    width: 95%;
+  }
+}
+
+.title {
+    margin-bottom: 50px;
+}
+
+.cards-body {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.light-text {
+    color: #b6b6b6;
+    font-size: small;
+    padding-top: 4px;
+}
+
+.data {
+  width: 60%;
+}
+
+.btns {
+  width: 40%;
+  text-align: right;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 10px;
+}
+
+.btns button {
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+}
+
+.btns button:hover {
+    color: rgb(5, 129, 238);
+}
+
+.edit {
+    color: rgb(0, 180, 0);
+}
+
+.delete {
+    color: indianred;
+}
+
+.form-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form label {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+.form input[type="text"] {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  padding: 0.6rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form input[type="text"]::placeholder {
+  color: #aaa;
+}
+
+.form input[type="text"]:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 5px rgba(99, 102, 241, 0.4);
+}
+
+.form input[type="submit"] {
+  background-color: #6366f1;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form input[type="submit"]:hover {
+  background-color: #4f46e5;
+}
+
+.done {
+  color: lightgreen;
+  padding: 0 10px;
+}
+
+.undone {
+  color: lightcoral;
+  padding: 0 10px;
+}
+
+/* messages */
+.flash-message{
+  margin: 30px 30px 10px 30px;
+}
+
+.flash-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+}
+
+.flash-message.wrong {
+    background-color: #edd4d8;
+    color: #571518;
+    padding: 10px;
+    border: 1px solid #e6c3c3;
+    border-radius: 5px;
+}
