@@ -62,3 +62,7 @@ I created this project to:
 - Understand how routing, templating, and database integration work in Flask
 - Get hands-on experience with CRUD operations
 - Build a solid foundation before working on more advanced Python web projects
+
+---
+
+Thanks for checking out this project 😄
